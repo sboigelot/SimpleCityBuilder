@@ -39,9 +39,9 @@
             SpritePath="CityStat\TradeCapacity"
             Value="3"/>
 
-      <Building Id="0" BuildingName="RuinedAppartement" X="3" Z="3"/>
-      <Building Id="1" BuildingName="RuinedAppartement" X="5" Z="4"/>
-      <Building Id="2" BuildingName="RuinedAppartement" X="8" Z="2"/>
+      <Building Id="0" BuildingName="RuinedAppartement" X="3" Y="3"/>
+      <Building Id="1" BuildingName="RuinedAppartement" X="5" Y="4"/>
+      <Building Id="2" BuildingName="RuinedAppartement" X="8" Y="2"/>
 
       <AvailableTradeProducer Id="0"
                               CountryName="Tanzania"

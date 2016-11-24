@@ -3,7 +3,7 @@
 
   <Building Name="RuinedAppartement"
             BuildPrice="0"
-            SpritePath="Buildings\RuinedAppartement"
+            SpritePath="RuinedAppartement"
             UpgradeName="Appartement"
             UpgradePrice="50000"
             Buildable="false"
@@ -16,7 +16,7 @@
 
   <Building Name="Appartement"
             BuildPrice="100000"
-            SpritePath="Buildings\Appartement"
+            SpritePath="Appartement"
             UpgradeName="Appartement"
             Buildable="true"
             YearAvalable="1950">
@@ -28,7 +28,7 @@
   
   <Building Name="Hospital"
             BuildPrice="300000"
-            SpritePath="Buildings\Hospital"
+            SpritePath="Hospital"
             Buildable="true"
             YearAvalable="1950">
     <CityStatImpact ParameterName="Cash"
@@ -39,7 +39,7 @@
 
   <Building Name="Harbor"
             BuildPrice="300000"
-            SpritePath="Buildings\Harbor"
+            SpritePath="Harbor"
             Buildable="true"
             YearAvalable="1950">
     <CityStatImpact ParameterName="Cash"
@@ -50,7 +50,7 @@
 
   <Building Name="Aiport"
             BuildPrice="1000000"
-            SpritePath="Buildings\Airport"
+            SpritePath="Airport"
             Buildable="true"
             YearAvalable="1965">
     <CityStatImpact ParameterName="Cash"

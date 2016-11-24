@@ -71,7 +71,7 @@ namespace Assets.Scripts.Controllers.Screens
                     var info = go.AddComponent<CityScreenBuildingInfo>();
                     info.BuildingId = building1.Id;
 
-                    go.transform.position = new Vector3(building1.X, 0f, building1.Z);
+                    go.transform.position = new Vector3(building1.X, building1.Y, 0f);
                     go.transform.SetParent(BuildingLayerPanel, true);
 
                     var sr = go.AddComponent<SpriteRenderer>();

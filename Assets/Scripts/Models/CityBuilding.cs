@@ -14,7 +14,7 @@ namespace Assets.Scripts.Models
         public int X { get; set; }
 
         [XmlAttribute]
-        public int Z { get; set; }
+        public int Y { get; set; }
 
         public CityBuilding Clone()
         {
@@ -23,7 +23,7 @@ namespace Assets.Scripts.Models
                 Id = Id,
                 BuildingName = BuildingName,
                 X = X,
-                Z = Z
+                Y = Y
             };
         }
     }
