@@ -5,7 +5,7 @@ namespace Assets.Scripts.Models
     public class TradeConsumer : IClonable<TradeConsumer>
     {
         [XmlAttribute]
-        public string Id { get; set; }
+        public int Id { get; set; }
 
         [XmlAttribute]
         public string CountryName { get; set; }
@@ -25,39 +25,47 @@ namespace Assets.Scripts.Models
         [XmlAttribute("AvailabilityStart")]
         public string AvailabilityStartString { get; set; }
 
-        private GameDate _availabilityStart;
+        private GameDate availabilityStart;
 
         public GameDate AvailabilityStart
         {
             get
             {
-                if (_availabilityStart == null)
+                if (availabilityStart == null)
                 {
-                    _availabilityStart = new GameDate(AvailabilityStartString);
+                    availabilityStart = new GameDate(AvailabilityStartString);
                 }
-                return _availabilityStart;
+
+                return availabilityStart;
             }
 
-            set { _availabilityStart = value; }
+            set
+            {
+                availabilityStart = value;
+            }
         }
 
         [XmlAttribute("AvailabilityEnd")]
         public string AvailabilityEndString { get; set; }
 
-        private GameDate _availabilityEnd;
+        private GameDate availabilityEnd;
 
         public GameDate AvailabilityEnd
         {
             get
             {
-                if (_availabilityEnd == null)
+                if (availabilityEnd == null)
                 {
-                    _availabilityEnd = new GameDate(AvailabilityEndString);
+                    availabilityEnd = new GameDate(AvailabilityEndString);
                 }
-                return _availabilityEnd;
+
+                return availabilityEnd;
             }
 
-            set { _availabilityEnd = value; }
+            set
+            {
+                availabilityEnd = value;
+            }
         }
 
         public TradeConsumer Clone()

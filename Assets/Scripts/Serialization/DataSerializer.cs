@@ -14,7 +14,6 @@ namespace Assets.Scripts.Serialization
             using (var fileStream = File.Open(fileName, FileMode.CreateNew, FileAccess.ReadWrite))
             {
                 Serialize(fileStream, value);
-                //fileStream.Close();
             }
         }
 
@@ -50,7 +49,6 @@ namespace Assets.Scripts.Serialization
             using (var fileStream = File.Open(fileName, FileMode.Open, FileAccess.Read))
             {
                 var data = DeSerialize<T>(fileStream);
-                //fileStream.Close();
                 return data;
             }
         }
@@ -79,6 +77,7 @@ namespace Assets.Scripts.Serialization
                 typeof(City),
                 typeof(CityBuilding),
                 typeof(CityStat),
+                typeof(CityStatType),
                 typeof(CityStatImpact),
                 typeof(GameDate),
                 typeof(Goal),

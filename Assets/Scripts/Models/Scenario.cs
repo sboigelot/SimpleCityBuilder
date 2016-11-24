@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Xml.Serialization;
+using Assets.Scripts.Managers;
 
 namespace Assets.Scripts.Models
 {
@@ -15,44 +17,39 @@ namespace Assets.Scripts.Models
         [XmlAttribute("StartDate")]
         public string StartDateString { get; set; }
 
-        private GameDate _startDate;
+        private GameDate startDate;
+
         public GameDate StartDate
         {
-            get
-            {
-                if (_startDate == null)
-                {
-                    _startDate = new GameDate(StartDateString);
-                }
-                return _startDate;
-            }
-
-            set
-            {
-                _startDate = value;
-            }
+            get { return startDate ?? (startDate = new GameDate(StartDateString)); }
+            set { startDate = value; }
         }
 
         [XmlAttribute("EndDate")]
         public string EndDateString { get; set; }
 
-        private GameDate _endDate;
+        private GameDate endDate;
+
         public GameDate EndDate
         {
             get
             {
-                if (_endDate == null)
+                if (endDate == null)
                 {
-                    _endDate = new GameDate(EndDateString);
+                    endDate = new GameDate(EndDateString);
                 }
-                return _endDate;
+
+                return endDate;
             }
 
             set
             {
-                _endDate = value;
+                endDate = value;
             }
         }
+
+        [XmlAttribute("SecondPerWeek")]
+        public int SecondPerWeek { get; set; }
 
         [XmlElement("VictoryCondition")]
         public List<Goal> VictoryConditions { get; set; }
@@ -79,6 +76,54 @@ namespace Assets.Scripts.Models
                 RequireAchievementNames = RequireAchievementNames.ToList(),
                 VictoryAchievement = VictoryAchievement
             };
+        }
+
+        public void CheckGoals(City city)
+        {
+            // TODO priority:bug this whole method doesn't seems to work
+            if (VictoryConditions.All(g => g.IsMet(city)))
+            {
+                OnVictory();
+            }
+
+            if (DefeatConditions.Any(g => g.IsMet(city)))
+            {
+                OnDefeat();
+            }
+
+            foreach (var achievement in PrototypeManager.Instance.Achievements)
+            {
+                if (achievement.IsGoalRelated)
+                {
+                    if (achievement.Goals.All(g => g.IsMet(city)))
+                    {
+                        OnAchievement(achievement);
+                    }
+                }
+            }
+        }
+
+        private void OnAchievement(Achievement achievement)
+        {
+            // TODO priority:medium
+            Debug.WriteLine("Achievement get: " + achievement.Name);
+            if (!SaveManager.Instance.PlayerProfile.ObtainedAchievements.Contains(achievement.Name))
+            {
+                SaveManager.Instance.PlayerProfile.ObtainedAchievements.Add(achievement.Name);
+                SaveManager.Instance.SavePlayerProfile();
+            }
+        }
+
+        private void OnDefeat()
+        {
+            // TODO priority:high
+            Debug.WriteLine("Defeat");
+        }
+
+        private void OnVictory()
+        {
+            // TODO priority:high
+            Debug.WriteLine("Victory");
         }
     }
 }

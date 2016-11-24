@@ -8,8 +8,6 @@
             UpgradePrice="50000"
             Buildable="false"
             YearAvalable="1950">
-    <CityStatImpact ParameterName="Cash"
-          WeeklyImpact="0"/>
     <CityStatImpact ParameterName="Happiness"
           WeeklyImpact="-1"/>
   </Building>

@@ -1,6 +1,4 @@
-﻿using JetBrains.Annotations;
-
-namespace Assets.Scripts
+﻿namespace Assets.Scripts
 {
     public class Singleton<T> where T : new()
     {

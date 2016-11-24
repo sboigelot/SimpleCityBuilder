@@ -8,7 +8,8 @@ namespace Assets.Scripts.Localization
     public class Localizer : Singleton<Localizer>
     {
         private Dictionary<string, Dictionary<string, string>> locals;
-        private string _currentCulture;
+
+        private string currentCulture;
 
         public Localizer()
         {
@@ -18,12 +19,16 @@ namespace Assets.Scripts.Localization
 
         public string CurrentCulture
         {
-            get { return _currentCulture; }
+            get
+            {
+                return currentCulture;
+            }
+
             set
             {
-                if (_currentCulture != value)
+                if (currentCulture != value)
                 {
-                    _currentCulture = value;
+                    currentCulture = value;
                     UpdateRegisteredInterfaces();
                 }
             }
@@ -37,6 +42,7 @@ namespace Assets.Scripts.Localization
             {
                 localizableInterfaces.Add(screen);
             }
+
             screen.OnLocalChanged();
         }
 
@@ -51,7 +57,9 @@ namespace Assets.Scripts.Localization
         public static string Get(string key)
         {
             if (string.IsNullOrEmpty(key))
-                return "";
+            {
+                return string.Empty;
+            }
 
             if (!Instance.locals.ContainsKey(Instance.CurrentCulture) ||
                 !Instance.locals[Instance.CurrentCulture].ContainsKey(key))
@@ -80,17 +88,11 @@ namespace Assets.Scripts.Localization
             }
         }
 
-        public void EnsureAllLocalKeyExist( /*List<Card> cards*/)
+        public void EnsureAllLocalKeyExist()
         {
             var keys = new List<string>();
-            ////foreach (var card in cards)
-            ////{
-            ////    keys.Add(card.Name);
-            ////    keys.Add(card.DescriptionTextLocalCode);
-            ////    keys.Add(card.LeftOptionTextLocalCode);
-            ////    keys.Add(card.RightOptionTextLocalCode);
-            ////}
-
+           
+            // TODO priority:medium implement a way to loop the prototype and fetch all keys
             keys = keys.Distinct().ToList();
             foreach (var key in keys.ToList())
             {
@@ -145,7 +147,7 @@ namespace Assets.Scripts.Localization
             var rows = File.ReadAllLines(file);
             foreach (var row in rows)
             {
-                var args = row.Split(new[] {'='}, 2);
+                var args = row.Split(new[] { '=' }, 2);
                 local.Add(args[0], args[1]);
             }
         }

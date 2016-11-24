@@ -1,40 +1,41 @@
 ﻿using System;
 using System.Globalization;
 using System.Linq;
-using System.Xml;
-using System.Xml.Schema;
-using System.Xml.Serialization;
 
 namespace Assets.Scripts.Models
 {
-    public class GameDate : IClonable<GameDate>//, IXmlSerializable
+    public class GameDate : IClonable<GameDate>
     {
-        private int _week;
-        private int _weekInYear;
+        private int week;
+        private int weekInYear;
 
         public int Year { get; set; }
 
         public int Week
         {
-            get { return _week; }
+            get
+            {
+                return week;
+            }
+
             set
             {
-                if (value != _week)
+                if (value != week)
                 {
-                    if (_weekInYear == 0)
+                    if (weekInYear == 0)
                     {
-                        _weekInYear = WeekInYear();
+                        weekInYear = WeekInYear();
                     }
 
-                    if (value > _weekInYear)
+                    if (value > weekInYear)
                     {
                         Year++;
-                        _weekInYear = WeekInYear();
-                        _week = 0;
+                        weekInYear = WeekInYear();
+                        week = 0;
                     }
                     else
                     {
-                        _week = value;
+                        week = value;
                     }
                 }
             }
@@ -52,7 +53,6 @@ namespace Assets.Scripts.Models
 
         public GameDate()
         {
-            
         }
 
         private int WeekInYear()
@@ -72,6 +72,11 @@ namespace Assets.Scripts.Models
                 Year = Year,
                 Week = Week
             };
+        }
+
+        public override string ToString()
+        {
+            return Year + "-" + Week;
         }
     }
 }

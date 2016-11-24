@@ -20,6 +20,9 @@ namespace Assets.Scripts.Models
         [XmlAttribute]
         public int MaxValue { get; set; }
 
+        [XmlAttribute]
+        public CityStatType StatType { get; set; }
+
         public CityStat Clone()
         {
             return new CityStat
@@ -29,6 +32,7 @@ namespace Assets.Scripts.Models
                 Value = Value,
                 MinValue = MinValue,
                 MaxValue = MaxValue,
+                StatType = StatType,
             };
         }
     }

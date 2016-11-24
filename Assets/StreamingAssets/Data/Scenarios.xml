@@ -3,6 +3,7 @@
   <Scenario Name="Sandbox"
             StartDate="1960-01"
             EndDate="2220-01"
+            SecondPerWeek="5"
             VictoryAchievement="SandboxCompleted">
     <VictoryCondition ParameterName="Finance"
                       TargetValue="100"
@@ -23,22 +24,27 @@
           Date="1960-01">
 
       <Stat Name="Cash"
-            SpritePath="CityStat\Cash"
-            Value="100000"/>
+            SpritePath="Cash"
+            Value="100000"
+            Type="WeeklyImpacted"/>
       <Stat Name="Happiness"
-            SpritePath="CityStat\Happiness"
+            SpritePath="Happiness"
             Value="35"
             MinValue="0"
-            MaxValue="100"/>
+            MaxValue="100"
+            Type="WeeklyImpacted"/>
       <Stat Name="Finance"
-            SpritePath="CityStat\Finance"
+            SpritePath="Finance"
             Value="10"
             MinValue="0"
-            MaxValue="100"/>
+            MaxValue="100"
+            Type="WeeklyImpacted"/>
       <Stat Name="TradeCapacity"
-            SpritePath="CityStat\TradeCapacity"
-            Value="3"/>
+            SpritePath="TradeCapacity"
+            Value="0"
+            Type="SumOfBuildings"/>
 
+      <!-- TODO priority:high implement a way to select a building and upgrade/repair it -->
       <Building Id="0" BuildingName="RuinedAppartement" X="3" Y="3"/>
       <Building Id="1" BuildingName="RuinedAppartement" X="5" Y="4"/>
       <Building Id="2" BuildingName="RuinedAppartement" X="8" Y="2"/>

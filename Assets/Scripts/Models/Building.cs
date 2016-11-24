@@ -13,7 +13,7 @@ namespace Assets.Scripts.Models
         public int YearAvalable { get; set; }
 
         [XmlElement("CityStatImpact")]
-        public List<CityStat> CityStatImpacts { get; set; }
+        public List<CityStatImpact> CityStatImpacts { get; set; }
 
         [XmlAttribute]
         public int BuildPrice { get; set; }

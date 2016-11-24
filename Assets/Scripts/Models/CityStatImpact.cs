@@ -5,7 +5,7 @@ namespace Assets.Scripts.Models
     public class CityStatImpact : IClonable<CityStatImpact>
     {
         [XmlAttribute]
-        public string Name { get; set; }
+        public string ParameterName { get; set; }
 
         [XmlAttribute]
         public int WeeklyImpact { get; set; }
@@ -14,7 +14,7 @@ namespace Assets.Scripts.Models
         {
             return new CityStatImpact
             {
-                Name = Name,
+                ParameterName = ParameterName,
                 WeeklyImpact = WeeklyImpact,
             };
         }

@@ -16,5 +16,13 @@ namespace Assets.Scripts.Managers
                 DataSerializer.Instance.SaveToAppData(string.Empty, "Profile.xml", PlayerProfile);
             }
         }
+
+        public void SavePlayerProfile()
+        {
+            if (PlayerProfile != null)
+            {
+                DataSerializer.Instance.SaveToAppData(string.Empty, "Profile.xml", PlayerProfile);
+            }
+        }
     }
 }

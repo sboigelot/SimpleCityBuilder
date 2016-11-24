@@ -6,5 +6,11 @@
           TargetValue="1000000"
           ComparisonType="IsGreaterOrEqual"/>
   </Achievement>
+
+  <Achievement Name="Happy town">
+    <Goal CityStatName="Happiness"
+          TargetValue="85"
+          ComparisonType="IsGreaterOrEqual"/>
+  </Achievement>
   
 </ArrayOfAchievement>
