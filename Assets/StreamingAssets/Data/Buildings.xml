@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfBuilding>
+
+  <Building Name="RuinedAppartement"
+            BuildPrice="0"
+            SpritePath="Buildings\RuinedAppartement"
+            UpgradeName="Appartement"
+            UpgradePrice="50000"
+            Buildable="false"
+            YearAvalable="1950">
+    <CityStatImpact ParameterName="Cash"
+          WeeklyImpact="0"/>
+    <CityStatImpact ParameterName="Happiness"
+          WeeklyImpact="-1"/>
+  </Building>
+
+  <Building Name="Appartement"
+            BuildPrice="100000"
+            SpritePath="Buildings\Appartement"
+            UpgradeName="Appartement"
+            Buildable="true"
+            YearAvalable="1950">
+    <CityStatImpact ParameterName="Cash"
+          WeeklyImpact="300"/>
+    <CityStatImpact ParameterName="Happiness"
+          WeeklyImpact="+1"/>
+  </Building>
+  
+  <Building Name="Hospital"
+            BuildPrice="300000"
+            SpritePath="Buildings\Hospital"
+            Buildable="true"
+            YearAvalable="1950">
+    <CityStatImpact ParameterName="Cash"
+          WeeklyImpact="-1500"/>
+    <CityStatImpact ParameterName="Happiness"
+          WeeklyImpact="+5"/>
+  </Building>
+
+  <Building Name="Harbor"
+            BuildPrice="300000"
+            SpritePath="Buildings\Harbor"
+            Buildable="true"
+            YearAvalable="1950">
+    <CityStatImpact ParameterName="Cash"
+          WeeklyImpact="-3000"/>
+    <CityStatImpact ParameterName="TradeCapacity"
+          WeeklyImpact="+5"/>
+  </Building>
+
+  <Building Name="Aiport"
+            BuildPrice="1000000"
+            SpritePath="Buildings\Airport"
+            Buildable="true"
+            YearAvalable="1965">
+    <CityStatImpact ParameterName="Cash"
+          WeeklyImpact="-15000"/>
+    <CityStatImpact ParameterName="TradeCapacity"
+          WeeklyImpact="+15"/>
+  </Building>
+</ArrayOfBuilding>

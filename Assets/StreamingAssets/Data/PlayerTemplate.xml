@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PlayerProfile Login="Player" 
+               Email=""
+               Score="0"
+               IsRegistered="false"
+               RememberPassword="false"
+               PasswordHash=""
+               Culture="en_US"/>

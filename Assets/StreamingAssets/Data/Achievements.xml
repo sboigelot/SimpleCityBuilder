@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfAchievement>
+
+  <Achievement Name="Money shower">
+    <Goal CityStatName="Cash" 
+          TargetValue="1000000"
+          ComparisonType="IsGreaterOrEqual"/>
+  </Achievement>
+  
+</ArrayOfAchievement>

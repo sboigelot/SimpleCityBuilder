@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfScenario>
+  <Scenario Name="Sandbox"
+            StartDate="1960-01"
+            EndDate="2220-01"
+            VictoryAchievement="SandboxCompleted">
+    <VictoryCondition ParameterName="Finance"
+                      TargetValue="100"
+                      ComparisonType="IsGreaterOrEqual"/>
+    <VictoryCondition ParameterName="Happiness"
+                      TargetValue="100"
+                      ComparisonType="IsGreaterOrEqual"/>
+    <VictoryCondition ParameterName="TradeCapacity"
+                      TargetValue="50"
+                      ComparisonType="IsGreaterOrEqual"/>
+    <DefeatConditions ParameterName="Cash"
+                      TargetValue="0"
+                      ComparisonType="IsLowerOrEqual"/>
+    <DefeatConditions ParameterName="Happiness"
+                      TargetValue="0"
+                      ComparisonType="IsLowerOrEqual"/>
+    <City Name="Dubai"
+          Date="1960-01">
+
+      <Stat Name="Cash"
+            SpritePath="CityStat\Cash"
+            Value="100000"/>
+      <Stat Name="Happiness"
+            SpritePath="CityStat\Happiness"
+            Value="35"
+            MinValue="0"
+            MaxValue="100"/>
+      <Stat Name="Finance"
+            SpritePath="CityStat\Finance"
+            Value="10"
+            MinValue="0"
+            MaxValue="100"/>
+      <Stat Name="TradeCapacity"
+            SpritePath="CityStat\TradeCapacity"
+            Value="3"/>
+
+      <Building Id="0" BuildingName="RuinedAppartement" X="3" Z="3"/>
+      <Building Id="1" BuildingName="RuinedAppartement" X="5" Z="4"/>
+      <Building Id="2" BuildingName="RuinedAppartement" X="8" Z="2"/>
+
+      <AvailableTradeProducer Id="0"
+                              CountryName="Tanzania"
+                              CompanyName="DarElSalem Ltd."
+                              GoodName="Gemstone"
+                              WeeklyGoodQuantity="200"
+                              GoodUnitPrice="50"
+                              AvailabilityStart="1960-01"
+                              AvailabilityEnd="2220-01"/>
+
+      <AvailableTradeProducer Id="0"
+                              CountryName="Ghana"
+                              CompanyName="UDA crops"
+                              GoodName="Cacao beans"
+                              WeeklyGoodQuantity="1500"
+                              GoodUnitPrice="3"
+                              AvailabilityStart="1960-01"
+                              AvailabilityEnd="2220-01"/>
+
+      <AvailableTradeConsumer Id="0"
+                              CountryName="Belgium"
+                              CompanyName="Antwerp GCU"
+                              GoodName="Gemstone"
+                              WeeklyGoodQuantity="150"
+                              GoodUnitPrice="300"
+                              AvailabilityStart="1960-01"
+                              AvailabilityEnd="2220-01"/>
+
+      <AvailableTradeConsumer Id="0"
+                              CountryName="Belgium"
+                              CompanyName="Galere"
+                              GoodName="Cacao beans"
+                              WeeklyGoodQuantity="3000"
+                              GoodUnitPrice="12"
+                              AvailabilityStart="1960-01"
+                              AvailabilityEnd="2220-01"/>
+    </City>
+  </Scenario>
+
+</ArrayOfScenario>
